@@ -1,143 +1,1164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahalabi | Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Farooq Halabi is a Knowledge Management and Customer Experience Specialist focused on bilingual self-service, Salesforce Knowledge, help centres, and customer support journeys.">
+  <meta name="theme-color" content="#0a2528">
+  <link rel="canonical" href="https://fahalabi.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Farooq Halabi | Knowledge Management & Customer Experience">
+  <meta property="og:description" content="Turning complex service information into clear, useful customer and agent experiences.">
+  <meta property="og:url" content="https://fahalabi.github.io/">
+  <meta property="og:image" content="https://fahalabi.github.io/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Farooq Halabi | Knowledge Management & Customer Experience">
+  <meta name="twitter:description" content="Clear knowledge. Better customer experiences.">
+  <meta name="twitter:image" content="https://fahalabi.github.io/assets/og.png">
+
+  <title>Farooq Halabi | Knowledge Management & Customer Experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
 
   <style>
+    :root {
+      --ink: #10282b;
+      --ink-2: #17383c;
+      --paper: #f5f2ea;
+      --paper-2: #ebe7dc;
+      --white: #fffdf8;
+      --teal: #37d6c5;
+      --teal-dark: #0a7770;
+      --coral: #ff9d78;
+      --muted: #5f6e6e;
+      --line: rgba(16, 40, 43, 0.15);
+      --shadow: 0 22px 70px rgba(8, 31, 34, 0.14);
+      --radius: 24px;
+      --content: 1180px;
+    }
+
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
     }
 
-    main {
-      width: min(900px, 90%);
-      margin: auto;
+    body::selection {
+      background: var(--teal);
+      color: var(--ink);
     }
 
-    header {
-      min-height: 85vh;
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo,
+    .eyebrow,
+    .button,
+    .stat-value {
+      font-family: "Manrope", "DM Sans", Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .container {
+      width: min(var(--content), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 12px;
+      left: 12px;
+      transform: translateY(-150%);
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(10, 37, 40, 0.94);
+      color: var(--white);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 76px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    h1 {
-      color: white;
-      font-size: clamp(3rem, 10vw, 6rem);
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
-    h2 {
-      color: white;
-      margin-bottom: 20px;
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--ink);
+      font-size: 0.82rem;
     }
 
-    .intro {
-      max-width: 600px;
-      font-size: 1.2rem;
-      margin: 20px 0 30px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--teal);
+    }
+
+    .nav-links .nav-contact {
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 999px;
+      color: var(--white);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        var(--ink);
+      background-size: 54px 54px;
+      color: var(--white);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      right: -190px;
+      bottom: -260px;
+      border: 90px solid rgba(55, 214, 197, 0.12);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100svh - 76px);
+      padding: 76px 0 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.72fr);
+      align-items: center;
+      gap: clamp(50px, 8vw, 110px);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin-bottom: 26px;
+      font-size: clamp(3.4rem, 8vw, 7.8rem);
+      font-weight: 800;
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 span {
+      color: var(--teal);
+    }
+
+    .hero-intro {
+      max-width: 680px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-actions,
+    .project-links,
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .button {
-      display: inline-block;
-      background: #38bdf8;
-      color: #082f49;
-      padding: 12px 22px;
-      border-radius: 8px;
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
       text-decoration: none;
-      font-weight: bold;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
     }
 
-    section {
-      padding: 70px 0;
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--teal);
+      color: var(--ink);
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.34);
+      color: var(--white);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--teal);
+      background: rgba(55, 214, 197, 0.08);
+    }
+
+    .profile-wrap {
+      position: relative;
+      width: min(100%, 430px);
+      justify-self: end;
+    }
+
+    .profile-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -22px 30px 28px -22px;
+      border: 2px solid var(--teal);
+      border-radius: 46% 54% 56% 44% / 42% 40% 60% 58%;
+      transform: rotate(-4deg);
+    }
+
+    .profile-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 0.86;
+      border-radius: 42% 58% 48% 52% / 44% 42% 58% 56%;
+      object-fit: cover;
+      object-position: center 22%;
+      box-shadow: var(--shadow);
+    }
+
+    .location-pill {
+      position: absolute;
+      right: -20px;
+      bottom: 30px;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 14px;
+      background: rgba(10, 37, 40, 0.92);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-stats {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .stat {
+      padding: 25px 0 30px;
+      border-right: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .stat:not(:first-child) {
+      padding-left: clamp(20px, 4vw, 60px);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-value {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--white);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 800;
+    }
+
+    .stat-label {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.85rem;
+    }
+
+    .section {
+      padding: clamp(80px, 11vw, 140px) 0;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 54px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--teal-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.6rem, 5vw, 5.1rem);
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      max-width: 610px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(46px, 8vw, 100px);
+      align-items: start;
+    }
+
+    .about-copy p:first-child {
+      color: var(--ink);
+      font-family: "Manrope", "DM Sans", Arial, sans-serif;
+      font-size: clamp(1.55rem, 3vw, 2.45rem);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.035em;
+    }
+
+    .about-copy p:last-child {
+      color: var(--muted);
+    }
+
+    .capability-panel {
+      padding: clamp(28px, 5vw, 46px);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .capability-panel h3 {
+      margin-bottom: 26px;
+      color: var(--teal);
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .capabilities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .capabilities span {
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.84rem;
+    }
+
+    .work-section {
+      background: var(--paper-2);
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(190px, 0.58fr) minmax(0, 1.42fr);
+      gap: clamp(30px, 6vw, 80px);
+      padding: clamp(30px, 5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 60px rgba(8, 31, 34, 0.1);
+    }
+
+    .project-card::after {
+      content: attr(data-number);
+      position: absolute;
+      right: 22px;
+      bottom: -42px;
+      color: rgba(16, 40, 43, 0.045);
+      font-family: "Manrope", sans-serif;
+      font-size: 9rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .project-meta {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-type {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--teal-dark);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-meta h3 {
+      margin-bottom: 14px;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .project-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--paper-2);
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    .project-detail {
+      position: relative;
+      z-index: 1;
+      align-self: center;
+    }
+
+    .project-detail p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .project-links {
+      margin-top: 26px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-family: "Manrope", "DM Sans", Arial, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-underline-offset: 5px;
+    }
+
+    .text-link:hover {
+      color: var(--teal-dark);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 0.55fr 1.45fr;
+      gap: clamp(42px, 8vw, 100px);
+    }
+
+    .experience-intro {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+    }
+
+    .experience-intro h2 {
+      margin-bottom: 20px;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+    }
+
+    .experience-intro p {
+      color: var(--muted);
+    }
+
+    .timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-date {
+      color: var(--teal-dark);
+      font-family: "Manrope", "DM Sans", Arial, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .timeline-content h3 {
+      margin-bottom: 7px;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .company {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .timeline-content p:last-child {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .contact-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(86px, 12vw, 150px) 0;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .contact-section::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -150px;
+      top: -320px;
+      border: 95px solid rgba(55, 214, 197, 0.09);
+      border-radius: 50%;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: end;
+      gap: 60px;
+    }
+
+    .contact-section .section-kicker {
+      color: var(--teal);
+    }
+
+    .contact-section h2 {
+      max-width: 780px;
+      margin-bottom: 24px;
+      font-size: clamp(3.1rem, 7vw, 7.2rem);
+    }
+
+    .contact-section h2 span {
+      color: var(--teal);
+    }
+
+    .contact-section p {
+      max-width: 620px;
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .contact-links {
+      margin-top: 32px;
+    }
+
+    .contact-aside {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .contact-aside p {
+      margin-bottom: 5px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .contact-aside a {
+      color: var(--white);
+      font-family: "Manrope", "DM Sans", Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      word-break: break-word;
+      text-underline-offset: 5px;
+    }
+
+    .footer {
+      padding: 25px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
-    .project {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 12px;
+    .footer p {
+      margin: 0;
     }
 
-    .project h3 {
-      color: #38bdf8;
-      margin-bottom: 10px;
+    .footer a {
+      color: rgba(255, 255, 255, 0.72);
     }
 
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      color: #94a3b8;
+    :focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 4px;
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-heading,
+      .about-grid,
+      .experience-grid,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-top: 64px;
+      }
+
+      .profile-wrap {
+        width: min(72vw, 430px);
+        justify-self: center;
+        margin-top: 18px;
+      }
+
+      .section-heading {
+        gap: 24px;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .experience-intro {
+        position: static;
+      }
+
+      .contact-aside {
+        max-width: 520px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        width: min(var(--content), calc(100% - 28px));
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .logo-name,
+      .nav-links a:not(.nav-contact) {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.15rem, 16vw, 5.2rem);
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+        padding: 10px 0 18px;
+      }
+
+      .stat,
+      .stat:not(:first-child) {
+        padding: 15px 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .profile-wrap {
+        width: min(82vw, 390px);
+      }
+
+      .location-pill {
+        right: -4px;
+        bottom: 18px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Farooq Halabi",
+    "url": "https://fahalabi.github.io/",
+    "image": "https://fahalabi.github.io/assets/farooq-halabi.jpg",
+    "jobTitle": "Knowledge Management & Customer Experience Specialist",
+    "email": "mailto:Fahalabi@outlook.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/farooq-halabi-00536518b/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <main>
-    <header>
-      <div>
-        <p>Hello, my name is</p>
-        <h1>Fahalabi.</h1>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-        <p class="intro">
-          I am a professional who enjoys creating meaningful work
-          and solving interesting problems.
-        </p>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="logo" href="#top" aria-label="Farooq Halabi, home">
+        <span class="logo-mark">FH</span>
+        <span class="logo-name">Farooq Halabi</span>
+      </a>
 
-        <a class="button" href="#projects">View my work</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Selected work</a>
+        <a href="#experience">Experience</a>
+        <a class="nav-contact" href="#contact">Let's talk</a>
       </div>
-    </header>
+    </nav>
+  </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Add a short introduction about your experience, skills,
-        interests, and the type of opportunities you are looking for.
-      </p>
-    </section>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid container">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Knowledge management × customer excellence</p>
+          <h1>Clear knowledge.<br><span>Better experiences.</span></h1>
+          <p class="hero-intro">
+            I'm Farooq, a Knowledge Management &amp; Customer Experience Specialist who turns complex service information into useful bilingual content, intuitive self-service journeys, and stronger support operations.
+          </p>
 
-    <section id="projects">
-      <h2>Selected Projects</h2>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/farooq-halabi-00536518b/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
 
-      <div class="projects">
-        <article class="project">
-          <h3>Project One</h3>
-          <p>Describe what you created, your role, and the result.</p>
-        </article>
+        <div class="profile-wrap reveal">
+          <img class="profile-image" src="assets/farooq-halabi.jpg" alt="Portrait of Farooq Halabi" width="884" height="884">
+          <div class="location-pill">Dubai, UAE · Arabic + English</div>
+        </div>
+      </div>
 
-        <article class="project">
-          <h3>Project Two</h3>
-          <p>Describe what you created, your role, and the result.</p>
-        </article>
-
-        <article class="project">
-          <h3>Project Three</h3>
-          <p>Describe what you created, your role, and the result.</p>
-        </article>
+      <div class="hero-stats container" aria-label="Professional highlights">
+        <div class="stat">
+          <span class="stat-value">4+ years</span>
+          <span class="stat-label">Shahid / MBC Group experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">2 languages</span>
+          <span class="stat-label">English and Arabic CX content</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">MENA scale</span>
+          <span class="stat-label">Customer and agent knowledge operations</span>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your-email@example.com</p>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">About</p>
+            <h2>Making answers easier to find and use.</h2>
+          </div>
+          <p>
+            My work sits where content, systems, customer needs, and daily operations meet. I help teams turn changing policies and complex product information into dependable experiences for customers and support agents.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I build the knowledge layer behind excellent service: structured help content, clear internal guidance, well-designed bot journeys, and repeatable publishing workflows.
+            </p>
+            <p>
+              At Shahid / MBC Group, I supported one of the MENA region's largest streaming platforms through its Help Centre, Salesforce Knowledge Base, CMS workflows, internal care updates, and customer support journeys. I work comfortably across English and Arabic, partnering with product, operations, care teams, vendors, and senior stakeholders to keep information accurate and actionable.
+            </p>
+          </div>
+
+          <aside class="capability-panel reveal" aria-label="Core capabilities">
+            <h3>Core capabilities</h3>
+            <div class="capabilities">
+              <span>Knowledge Management</span>
+              <span>Customer Experience Operations</span>
+              <span>Salesforce Knowledge</span>
+              <span>Salesforce CMS</span>
+              <span>Help Centre Strategy</span>
+              <span>Bilingual CX Content</span>
+              <span>Customer Self-Service</span>
+              <span>Bot Flow UX</span>
+              <span>Documentation</span>
+              <span>Process Improvement</span>
+              <span>Workshop Facilitation</span>
+              <span>Stakeholder Coordination</span>
+            </div>
+          </aside>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      <p>© 2026 Fahalabi</p>
-    </footer>
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">Selected work</p>
+            <h2>Knowledge that works in the real world.</h2>
+          </div>
+          <p>
+            Examples spanning customer self-service, guided support journeys, and agent-facing knowledge. Public links are included where the work can be shared.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project-card reveal" data-number="01">
+            <div class="project-meta">
+              <span class="project-type">Customer self-service</span>
+              <h3>Shahid Help Centre Revamp</h3>
+              <div class="project-tags">
+                <span>Information architecture</span>
+                <span>English + Arabic</span>
+                <span>Salesforce CMS</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <p>
+                Contributed to the revamp and expansion of Shahid's bilingual self-service experience, creating clearer routes across account, subscription, viewing, and troubleshooting topics. The work supported broader topic coverage and made answers easier for customers to find independently.
+              </p>
+              <div class="project-links">
+                <a class="text-link" href="https://help.shahid.mbc.net/s/?language=en_US" target="_blank" rel="noopener">Explore in English <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="https://help.shahid.mbc.net/s/?language=ar" target="_blank" rel="noopener" lang="ar">شاهد النسخة العربية <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-number="02">
+            <div class="project-meta">
+              <span class="project-type">Support journey design</span>
+              <h3>WhatsApp Bot Journey Revamp</h3>
+              <div class="project-tags">
+                <span>Journey mapping</span>
+                <span>Bot flow UX</span>
+                <span>Guided support</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <p>
+                Mapped and redesigned support journeys for a richer WhatsApp experience, moving beyond basic text responses toward guided multi-choice flows and multimedia-supported interactions. The board captures both the redesigned journey and the flow prepared for implementation.
+              </p>
+              <div class="project-links">
+                <a class="text-link" href="https://miro.com/app/board/uXjVGnUhT0c=/?share_link_id=788267958654" target="_blank" rel="noopener">View the Miro journey map <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-number="03">
+            <div class="project-meta">
+              <span class="project-type">Agent knowledge</span>
+              <h3>Salesforce Knowledge Base Revamp</h3>
+              <div class="project-tags">
+                <span>Content governance</span>
+                <span>Agent usability</span>
+                <span>Knowledge quality</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <p>
+                Rebuilt and restructured English and Arabic knowledge content used by customer-facing teams. The work focused on findability, editorial consistency, content accuracy, and clearer guidance to support efficient first-contact resolution.
+              </p>
+              <div class="project-links">
+                <span class="text-link">Internal project · Details available on request</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container experience-grid">
+        <div class="experience-intro reveal">
+          <p class="section-kicker">Experience</p>
+          <h2>Service, operations, and communication.</h2>
+          <p>
+            A career built around coordinating people, information, and customer needs in fast-moving environments.
+          </p>
+          <a class="text-link" href="https://www.linkedin.com/in/farooq-halabi-00536518b/" target="_blank" rel="noopener">View LinkedIn profile <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2022—2025</div>
+            <div class="timeline-content">
+              <h3>Knowledge Management &amp; Customer Excellence Specialist</h3>
+              <p class="company">MBC Group — Shahid · Dubai, UAE</p>
+              <p>
+                Owned and maintained customer and agent knowledge experiences across the Help Centre, Salesforce Knowledge, Salesforce CMS, support journeys, internal communications, and knowledge-sharing workshops.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2021—2022</div>
+            <div class="timeline-content">
+              <h3>Event Manager</h3>
+              <p class="company">Max Events · Dubai, UAE</p>
+              <p>
+                Managed corporate conferences, speaking engagements, media appearances, vendor coordination, team briefings, logistics, and partner relationships.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2020—2021</div>
+            <div class="timeline-content">
+              <h3>Patient Coordinator</h3>
+              <p class="company">Al Futtaim Health Hub · Dubai, UAE</p>
+              <p>
+                Handled scheduling, data entry, and front-line service in a high-volume healthcare environment, including confidential COVID-19 testing coordination.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2016—2020</div>
+            <div class="timeline-content">
+              <h3>Event Operations</h3>
+              <p class="company">Quest of Adventure · Wonder-Lead · UAE</p>
+              <p>
+                Planned and delivered large-scale government and corporate events, coordinating vendors, teams, on-site operations, logistics, and consistent execution.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-inner container">
+        <div class="reveal">
+          <p class="section-kicker">Contact</p>
+          <h2>Let's make knowledge <span>work better.</span></h2>
+          <p>
+            Interested in knowledge management, customer experience, self-service, or content operations? I'm always open to a thoughtful conversation.
+          </p>
+          <div class="contact-links">
+            <a class="button button-primary" href="mailto:Fahalabi@outlook.com">Email Farooq <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/farooq-halabi-00536518b/" target="_blank" rel="noopener">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <aside class="contact-aside reveal">
+          <p>Based in</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Dubai%2C%20UAE" target="_blank" rel="noopener">Dubai, United Arab Emirates</a>
+          <br><br>
+          <p>Email</p>
+          <a href="mailto:Fahalabi@outlook.com">Fahalabi@outlook.com</a>
+        </aside>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner container">
+      <p>© <span id="year">2026</span> Farooq Halabi. Built around clarity, usefulness, and good customer experiences.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
 </body>
 </html>
