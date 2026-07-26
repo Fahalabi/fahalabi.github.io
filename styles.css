@@ -863,7 +863,7 @@ img {
 
 .market-uae {
   top: 21%;
-  right: 29%;
+  right: 15%;
 }
 
 .market-jordan {
@@ -1401,6 +1401,18 @@ img {
   color: white;
   font-size: 0.69rem;
   font-weight: 750;
+}
+
+.language-icon {
+  display: inline-grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .project-result .internal-note {
