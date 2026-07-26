@@ -92,16 +92,16 @@
               <div class="training-lines"><span></span><span></span><span></span></div>
             </div>
           </div>
-          <span class="floating-pill pill-training">Agents · Trainers · Vendors</span>
+          <span class="floating-pill pill-training">Prepared for agents · trainers · vendors</span>
           <span class="floating-sphere sphere-two"></span>
         </div>`,
     },
     {
       id: "launch",
       number: "04",
-      kicker: "Product launch readiness",
-      title: ["Launch", "ready"],
-      shortTitle: "CX launch",
+      kicker: "Agent knowledge at scale",
+      title: ["Information", "at scale"],
+      shortTitle: "Agent support",
       accent: "#7cc8d3",
       accentSoft: "#b9e1e6",
       ink: "#152022",
@@ -110,10 +110,10 @@
           <div class="launch-orbit launch-orbit-one"></div>
           <div class="launch-orbit launch-orbit-two"></div>
           <div class="launch-orbit launch-orbit-three"></div>
-          <div class="launch-core"><span>READY</span><strong>500</strong><small>agents</small></div>
-          <span class="market-label market-uae">UAE</span>
-          <span class="market-label market-jordan">JORDAN</span>
-          <span class="market-label market-egypt">EGYPT</span>
+          <div class="launch-core"><span>KNOWLEDGE REACH</span><strong>500+</strong><small>agent audience</small></div>
+          <span class="market-label market-uae">KNOWLEDGE BASE</span>
+          <span class="market-label market-jordan">CARE UPDATES</span>
+          <span class="market-label market-egypt">TRAINING MATERIAL</span>
           <span class="floating-sphere sphere-one"></span>
         </div>`,
     },
@@ -195,6 +195,7 @@
     showcase.style.setProperty("--accent", item.accent);
     showcase.style.setProperty("--accent-soft", item.accentSoft);
     showcase.style.setProperty("--showcase-ink", item.ink);
+    showcase.classList.toggle("showcase-training", item.id === "training");
     stage.setAttribute(
       "aria-label",
       `${item.shortTitle} portfolio highlight`,
