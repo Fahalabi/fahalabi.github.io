@@ -1,0 +1,21 @@
+{
+  "name": "Farooq Halabi — CX × Knowledge × Applied AI",
+  "short_name": "Farooq Halabi",
+  "description": "The personal portfolio of Farooq Halabi, a Dubai-based customer experience and knowledge operations specialist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0a",
+  "theme_color": "#0b0b0a",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
