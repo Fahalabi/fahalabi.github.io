@@ -1,15 +1,10 @@
 (() => {
   'use strict';
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-  const motionToggle = document.querySelector('[data-motion-toggle]');
   const glow = document.querySelector('.pointer-glow');
   const header = document.querySelector('.site-header');
   const progress = document.querySelector('.progress-rail span');
-  let userPaused = false;
-  try { userPaused = localStorage.getItem('farooq-motion-paused') === 'true'; } catch { /* Storage is optional. */ }
-  const motionIsPaused = () => reducedMotion.matches || userPaused;
 
   const revealItems = [...document.querySelectorAll('.section-heading, .expertise-card, .project-card, .independent-project, .approach-panel, .experience-row, .credential-card, .quote-card, .award-card, .community-row, .contact-inner')];
   let revealObserver;
@@ -25,7 +20,7 @@
   }
   revealItems.forEach(item => {
     item.dataset.reveal = '';
-    if (!motionIsPaused() && revealObserver && item.getBoundingClientRect().top >= window.innerHeight) {
+    if (revealObserver && item.getBoundingClientRect().top >= window.innerHeight) {
       item.classList.add('reveal-ready');
       revealObserver.observe(item);
     } else {
@@ -39,29 +34,6 @@
       revealObserver?.unobserve(item);
     }
   });
-
-  const syncMotion = () => {
-    const paused = motionIsPaused();
-    document.body.classList.toggle('motion-paused', paused);
-    if (motionToggle) {
-      motionToggle.setAttribute('aria-pressed', String(paused));
-      motionToggle.setAttribute('aria-label', reducedMotion.matches ? 'Animations disabled by your reduced motion preference' : paused ? 'Resume animations' : 'Pause animations');
-      motionToggle.disabled = reducedMotion.matches;
-      motionToggle.innerHTML = `Motion ${paused ? 'off' : 'on'} <span aria-hidden="true">${paused ? '▷' : 'Ⅱ'}</span>`;
-    }
-    if (paused) {
-      glow?.classList.remove('is-visible');
-      revealItems.forEach(item => item.classList.add('is-revealed'));
-      revealObserver?.disconnect();
-    }
-  };
-  motionToggle?.addEventListener('click', () => {
-    userPaused = !userPaused;
-    try { localStorage.setItem('farooq-motion-paused', String(userPaused)); } catch { /* Preference still works for this visit. */ }
-    syncMotion();
-  });
-  reducedMotion.addEventListener('change', syncMotion);
-  syncMotion();
 
   let scrollFrame = 0;
   const updateScroll = () => {
@@ -83,7 +55,7 @@
   let pointerX = 0;
   let pointerY = 0;
   document.addEventListener('pointermove', event => {
-    if (!glow || !finePointer.matches || motionIsPaused()) return;
+    if (!glow || !finePointer.matches) return;
     pointerX = event.clientX;
     pointerY = event.clientY;
     glow.classList.add('is-visible');
@@ -93,7 +65,6 @@
     });
   }, { passive: true });
   document.addEventListener('pointerleave', () => glow?.classList.remove('is-visible'));
-  document.addEventListener('visibilitychange', () => document.body.classList.toggle('is-background', document.hidden));
 
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('#mobile-menu');

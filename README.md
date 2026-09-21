@@ -6,7 +6,7 @@ This repository contains the source for [fahalabi.github.io](https://fahalabi.gi
 
 - Main portfolio copy and sections: `index.html`
 - Design system and responsive layout: `assets/css/styles.css`
-- Motion preference, scroll reveals/progress, cursor glow, mobile navigation, copy-link and certificate lightbox behavior: `assets/js/main.js`
+- Scroll reveals/progress, cursor glow, mobile navigation, copy-link and certificate lightbox behavior: `assets/js/main.js`
 - Current CV download: `Farooq-Halabi-CV.pdf`
 - Social preview image: `assets/images/portfolio-social.png` (1200 × 630)
 - Hero portrait: `assets/images/farooq-portrait.webp` (supplied photograph, WebP encoding, no retouching)
@@ -30,8 +30,8 @@ This repository contains the source for [fahalabi.github.io](https://fahalabi.gi
 
 ## Local review
 
-The owner requested the original Geist/Geist Mono typography and animated moving bar, replacing the ivory/serif direction. The current design uses graphite, lime and cobalt. Motion is built with CSS and JavaScript; it is not an Adobe After Effects composition.
+The owner requested the original Geist/Geist Mono typography and animated moving bar, replacing the ivory/serif direction. The current design uses the owner-supplied palette: navy #003049, red #d62828, orange #f77f00, gold #fcbf49 and cream #eae2b7. Motion is built with CSS and JavaScript; it is not an Adobe After Effects composition. At the owner’s explicit request, motion stays on and there is no pause control or saved pause preference.
 
-Serve the folder with any static HTTP server and open the local address in a browser. Before publishing, check desktop and mobile layouts, keyboard navigation, reduced motion, the Motion pause/resume control and saved preference, moving bar, scroll reveals/progress, links, native case-study disclosures, certificate lightboxes, copy-link feedback and the CV download. All content must remain visible without JavaScript. Recommendations are visible together rather than hidden in a carousel.
+Serve the folder with any static HTTP server and open the local address in a browser. Before publishing, check desktop and mobile layouts, keyboard navigation, always-on motion (including hover, returning visits and OS reduced-motion settings), moving bar, scroll reveals/progress, links, native case-study disclosures, certificate lightboxes, copy-link feedback and the CV download. All content must remain visible without JavaScript. Recommendations are visible together rather than hidden in a carousel.
 
 GitHub Pages publishes the repository root from the `main` branch.
