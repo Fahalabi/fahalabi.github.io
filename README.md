@@ -6,8 +6,9 @@ This repository contains the source for [fahalabi.github.io](https://fahalabi.gi
 
 - Main portfolio copy and sections: `index.html`
 - Design system and responsive layout: `assets/css/styles.css`
-- Scroll reveals/progress, cursor glow, mobile navigation, copy-link and certificate lightbox behavior: `assets/js/main.js`
-- Current CV download: `Farooq-Halabi-CV.pdf`
+- Scroll reveals/progress, pointer effects, mobile navigation, recommendations, copy-link and certificate lightbox: `assets/js/main.js`
+- Downloadable one-page professional profile: `Farooq-Halabi-Profile.pdf`
+- Retained original CV: `Farooq-Halabi-CV.pdf` (not linked from the current page)
 - Social preview image: `assets/images/portfolio-social.png` (1200 × 630)
 - Hero portrait: `assets/images/farooq-portrait.webp` (supplied photograph, WebP encoding, no retouching)
 - Recognition certificates: `assets/images/recognition/`
@@ -26,12 +27,16 @@ This repository contains the source for [fahalabi.github.io](https://fahalabi.gi
 - Use practical BMAD and Canva descriptions; the owner approved removing the self-assigned expert titles from the page.
 - Keep outcomes labelled as reported results. Preserve the combined English/Arabic article count, approximate audience sizes and estimated time saving.
 - Earlier UAE work has no year range on the homepage because the previous HTML and retained CV differ on its end year.
-- The existing CV download is preserved as supplied; it has not been rewritten as part of the website refresh.
+- The original CV is preserved as supplied. The new download is explicitly a professional profile, not a replacement CV, and uses the reconciled website claims and practical tool descriptions.
 
 ## Local review
 
-The owner requested the original Geist/Geist Mono typography and animated moving bar, replacing the ivory/serif direction. The owner then requested a more distinctive redesign using the same exact palette. The current cream-led editorial composition puts a single-line name above a left-hand portrait and right-hand introduction on desktop, with the introduction before the portrait on mobile. Selected work uses open horizontal rows and outcome tiles. The palette is: navy #003049, red #d62828, orange #f77f00, gold #fcbf49 and cream #eae2b7. Motion is built with CSS and JavaScript; it is not an Adobe After Effects composition. At the owner’s explicit request, motion stays on and there is no pause control or saved pause preference.
+The current direction was built after the owner reset the earlier designs and delegated creative direction. It leads with a short value proposition, four professional work examples, a compact experience timeline, recommendations and contact. Detailed evidence, qualifications and recognition use native disclosures so the first read stays short.
 
-Serve the folder with any static HTTP server and open the local address in a browser. Before publishing, check desktop and mobile layouts, keyboard navigation, always-on motion (including hover, returning visits and OS reduced-motion settings), moving bar, scroll reveals/progress, links, native case-study disclosures, certificate lightboxes, copy-link feedback and the CV download. All content must remain visible without JavaScript. Recommendations are visible together rather than hidden in a carousel.
+The palette is near-black #111216, warm white #f5f3ee and orange #ff6b35. Geist and Geist Mono are self-hosted. Icons are inline SVGs. The work-card illustrations are schematic, not actual product screenshots. The supplied portrait remains unretouched; a CSS grayscale treatment reveals colour on hover, with colour shown on touch devices.
+
+Motion includes staggered headline entry, a travelling question-to-answer line, scroll reveals/progress and bounded pointer responses. Motion uses native CSS and JavaScript. The operating system's reduced-motion setting disables decorative movement. Recommendations change only when the visitor uses the previous/next controls; there is no autoplay. No motion toggle or saved preference is needed.
+
+Serve the folder with any static HTTP server and open the local address in a browser. Before publishing, check 1440, 768, 390 and 320px layouts, keyboard navigation, mobile navigation across 801px, actual motion, reduced motion, disclosures, all three recommendations, certificate dialogs and fallback links, copy-link feedback, the profile download and the 404 page. Content and native disclosures must remain usable without JavaScript; all recommendations are shown in that fallback.
 
 GitHub Pages publishes the repository root from the `main` branch.
